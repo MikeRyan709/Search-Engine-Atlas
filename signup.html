@@ -10,12 +10,22 @@
     <div class="form">
       <form method="POST" action="/signup">
         <h2 class="header">Log in!<h2>
-        <input type="email" name="email" placeholder="email" />
-        <input type="password" name="password" placeholder="password" />
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="email" 
+          required />
+        <input 
+          type="password" 
+          name="password" 
+          placeholder="password"
+          required 
+          />
         <input class="input"
           type="password"
           name="confirmpassword"
           placeholder="Confirm Password"
+          required
         />
         <button class="submit" type="submit">Sign up</button>
         <p class="signup">Already have an account? <a href="http://localhost:3000/login">Log in</a> here!</p>
