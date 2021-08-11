@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" type="text/css"   href="/css/index.css">
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+    <form method="POST" action="/search">
+    <h2>ATLAS Searched</h2>
+    </div>
+        <div class="search"> 
+        <label for="search">Search:</label>
+        <div class="searchbox">
+        <input type="text">
+        </div>
+        </div>
+            <div class="buttons">    
+            <label for="database">Database:</label>
+            <select id="db">
+            <option value="postgres">Postgres</option>
+            <option value="mongo">MongoDb</option>
+            <option value="both">Both</option>
+            </select>
+            <button type="submit">Submit!</button><br><br>
+            <a href="http://localhost:3000/">Homepage</a>
+            </form>
+            </div>
+</div>
+
+</body>
+</html>
