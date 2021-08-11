@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/signup.css" />
     <title>Sign up</title>
-</head>
-<body>
-  <h2>Sign up!</h2>
-    <form method="POST" action="/signup">
+  </head>
+  <body>
+    <div class="form">
+      <form method="POST" action="/signup">
+        <h2 class="header">Log in!<h2>
         <input type="email" name="email" placeholder="email" />
         <input type="password" name="password" placeholder="password" />
-        <input type="password" name="confirm_password" placeholder="confirm_password" />
-       
-        <button type="submit">Signup</button>
-</body>
+        <input class="input"
+          type="password"
+          name="confirmpassword"
+          placeholder="Confirm Password"
+        />
+        <button class="submit" type="submit">Sign up</button>
+        <p class="signup">Already have an account? <a href="http://localhost:3000/login">Log in</a> here!</p>
+      </form>
+    </div>
+  </body>
 </html>

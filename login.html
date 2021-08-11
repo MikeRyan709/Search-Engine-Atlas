@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/login.css" />
     <title>SearchEngine</title>
 </head>
 <body>
+<dev class="form">
     <form method="POST" action="/login">
-        <input type="email" name="email" placeholder="email" />
-        <input type="password" name="password" placeholder="password" />
-        <button type="submit">Login</button>
-        <p>Don't have an account? <a href="http://localhost:3000/signup">Sign up</a> today!</p>
+        <h2 class="header">Sign up!</h2>
+        <input class="email" type="email" name="email" placeholder="email" />
+        <input class="password" type="password" name="password" placeholder="password" />
+        <button class="submit" type="submit">Login</button>
+        <p class="signup">Don't have an account? <a href="http://localhost:3000/signup">Sign up</a> today!</p>
+</dev>
 
     </form>
 </body>
