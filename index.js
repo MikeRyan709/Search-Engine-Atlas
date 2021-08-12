@@ -3,6 +3,7 @@ const session = require("express-session");
 const path = require("path");
 const pg = require("pg");
 const bcrypt = require("bcrypt");
+const nunjucks = require('nunjucks');
 
 const pool = new pg.Pool({
   user: "postgres",
@@ -13,6 +14,10 @@ const pool = new pg.Pool({
 });
 
 const app = express();
+
+nunjucks.configure('views',{
+  express: app
+})
 
 app.use(express.static(__dirname + "/public"));
 app.use(session({ secret: "test",resave: true, saveUninitialized: true }));
@@ -25,19 +30,19 @@ app.use(
 );
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "homepage.html"));
+  res.render('homepage.html')
 });
 
 app.get("/signup", function (req, res) {
-  res.sendFile(path.join(__dirname, "signup.html"));
+  res.render("signup.html");
 });
 
 app.get("/logout", function (req, res) {
-  res.sendFile(path.join(__dirname, "logout.html"));
+  res.render("logout.html");
 });
 
 app.get("/search", function (req, res) {
-  res.sendFile(path.join(__dirname, "search.html"));
+  res.render("search.html");
 });
 
 app.post("/signup", async function (req, res) {
@@ -58,7 +63,7 @@ app.post("/signup", async function (req, res) {
 });
 
 app.get("/login", function (req, res) {
-  res.sendFile(path.join(__dirname, "login.html"));
+  res.render("login.html");
 });
 
 app.post("/login", async function (req, res) {
