@@ -1,6 +1,6 @@
 const express = require("express");
 const session = require("express-session");
-const path = require("path");
+//const path = require("path");
 const pg = require("pg");
 const bcrypt = require("bcrypt");
 const nunjucks = require('nunjucks');
@@ -45,6 +45,11 @@ app.get("/search", function (req, res) {
   res.render("search.html");
 });
 
+app.get("/results.html", function (req, res) {
+  res.render("results.html");
+});
+
+
 app.post("/signup", async function (req, res) {
   let email = req.body.email;
   let password = req.body.password;
@@ -84,7 +89,16 @@ app.post("/login", async function (req, res) {
       res.send("Invalid credentials try again!");
     }
   }
+  
 });
+
+app.post("/search", async function (req, res) {
+  const search = req.body.search;
+  let search_results = await pool.query("SELECT * FROM locations WHERE country LIKE '" + search + "'")
+  res.render('results.html', {
+    results: search_results
+  })
+})
 
 app.get("/secret", function (req, res) {
   if (req.session.loggedin === true) {
