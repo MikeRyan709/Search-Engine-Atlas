@@ -1,6 +1,8 @@
 body {
     align-items: center;
-    background-color: #000;
+    background-image:url("background.jpeg");
+    background-repeat:no-repeat;
+    background-size: 100%;
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -13,6 +15,7 @@ body {
     height: 500px;
     padding: 20px;
     width: 320px;
+    box-shadow: 5px 10px 18px;
   }
   .signup {
     color: #eee;

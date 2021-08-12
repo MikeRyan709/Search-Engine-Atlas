@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search</title>
-    <link rel="stylesheet" type="text/css"   href="/css/search.css">
-</head>
-<body>
-<div class="container">
-    <div class="logo">
+    <link rel="stylesheet" type="text/css" href="/css/search.css" />
+  </head>
+  <body>
+    <div class ="form">
     <form method="POST" action="/search">
-    <h2>ATLAS Searched</h2>
+      <h2 class="header">ATLAS Searched</h2>
+     <input class="search" type="search" name="search" placeholder="search" />
+      <select class="db" id="db">
+        <option value="postgres">Postgres</option>
+        <option value="mongo">MongoDb</option>
+        <option value="both">Both</option>
+      </select>
+      <button class="submit" type="submit">Search</button>
+     <p class="homepage">Click <a href="http://localhost:3000/">Here</a> to go Home! </p>
+    </form>
     </div>
-        <div class="search"> 
-        <label for="search">Search:</label>
-        <div class="searchbox">
-        <input type="text">
-        </div>
-        </div>
-            <div class="buttons">    
-            <label for="database">Database:</label>
-            <select id="db">
-            <option value="postgres">Postgres</option>
-            <option value="mongo">MongoDb</option>
-            <option value="both">Both</option>
-            </select>
-            <button type="submit">Submit!</button><br><br>
-            <a href="http://localhost:3000/">Homepage</a>
-            </form>
-            </div>
-</div>
-
-</body>
+  </body>
 </html>
