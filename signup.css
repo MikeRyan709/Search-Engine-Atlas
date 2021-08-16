@@ -1,0 +1,70 @@
+/* setting the background image, and aligning the content */
+body {
+  align-items: center;
+  background-image:url("background.jpeg");
+  background-repeat:no-repeat;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+/* Setting the background color and border for the form */
+.form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 5px 10px 18px;
+}
+/* Setting the color and font for the header */
+.header {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+/* setting the color and font for the signup */
+.signup {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 30px;
+}
+/* Setting the properties for the submit button */
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+/* Setting the color when button is active */
+.submit:active {
+  background-color: #06b;
+}
+/* Setting properties for the input field */
+input {
+  height: 50px;
+  position: relative;
+  width: 100%;
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  outline: 0;
+  padding: 4px 20px 0;
+  margin-top: 30px;
+}
