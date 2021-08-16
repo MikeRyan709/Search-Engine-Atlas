@@ -1,3 +1,4 @@
+/* Set the properties for the background image */
 body {
     align-items: center;
     background-image:url("background.jpeg");
@@ -7,7 +8,7 @@ body {
     justify-content: center;
     height: 100vh;
   }
-  
+  /* setting the sizing / padding along with color for the form */
   .form {
     background-color: #15172b;
     border-radius: 20px;
@@ -17,7 +18,7 @@ body {
     width: 320px;
     box-shadow: 5px 10px 18px;
   }
-  
+  /* Setting the font for the header  */
     .header {
     color: #eee;
     font-family: sans-serif;
@@ -25,14 +26,14 @@ body {
     font-weight: 600;
     margin-top: 30px;
   }
-  
+  /* Setting the link color and removing text decoration */
   .link {
     background-color: #199319;
   color: white;
   padding: 15px 25px;
   text-decoration: none;
   }
-  
+  /* Setting the size, font, and color for the button */
   button {
     background-color: #08d;
     border-radius: 12px;
@@ -47,6 +48,7 @@ body {
     text-align: center;
     width: 100%;
   }
+  /* Setting the color when button is active */
   .button:active {
     background-color: #06b;
   }

@@ -1,3 +1,4 @@
+/* Setting the background image and positioning */
 body {
     align-items: center;
     background-image:url("background.jpeg");
@@ -7,7 +8,7 @@ body {
     justify-content: center;
     height: 100vh;
   }
-  
+  /* Setting the color, sizing of the form */
   .form {
     background-color: #15172b;
     border-radius: 20px;
@@ -17,6 +18,7 @@ body {
     width: 320px;
     box-shadow: 5px 10px 18px;
   }
+  /* Setting the color and font for the signup page */
   .signup {
     color: #eee;
     font-family: sans-serif;
@@ -24,7 +26,7 @@ body {
     font-weight: 300;
     margin-top: 30px;
   }
-  
+  /* setting the color and font for the header */
   .header{
     color: #eee;
     font-family: sans-serif;
@@ -32,7 +34,7 @@ body {
     font-weight: 600;
     margin-top: 30px;
   }
-  
+  /* Setting the color, fontsize, and position of the submit button */
   .submit {
     background-color: #08d;
     border-radius: 12px;
@@ -47,11 +49,12 @@ body {
     text-align: center;
     width: 100%;
   }
-  
+  /* setting the color when submit button is active */
   .submit:active {
     background-color: #06b;
   }
   
+  /* Setting the border, position, and color of input field */
   input {
     height: 50px;
     position: relative;
