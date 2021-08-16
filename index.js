@@ -16,7 +16,8 @@ const pool = new pg.Pool({
 const app = express();
 
 nunjucks.configure('views',{
-  express: app
+  express: app,
+  noCache: false
 })
 
 app.use(express.static(__dirname + "/public"));
@@ -95,8 +96,9 @@ app.post("/login", async function (req, res) {
 app.post("/search", async function (req, res) {
   const search = req.body.search;
   let search_results = await pool.query("SELECT * FROM locations WHERE country LIKE '" + search + "'")
+  console.log(search_results);
   res.render('results.html', {
-    results: search_results
+    results: search_results.rows.map(result => JSON.stringify(result))
   })
 })
 
