@@ -15,3 +15,10 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: white;
 }
+tr:hover {
+    background-color: yellow;}
+th {
+    background-color: #f2f2f2;
+    color: black;
+  }
+ 
