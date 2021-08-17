@@ -10,8 +10,8 @@
     <div class ="form">
     <form method="POST" action="/search">
       <h2 class="header">ATLAS Searched</h2>
-     <input class="search" type="search" name="search" placeholder="search" />
-      <select class="db" id="db">
+     <input class="search" type="search" name="search" placeholder="search" required />
+      <select class="db" id="db" name="select">
         <option value="postgres">Postgres</option>
         <option value="mongo">MongoDb</option>
         <option value="both">Both</option>

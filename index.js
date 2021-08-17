@@ -96,22 +96,25 @@ app.post("/login", async function (req, res) {
 });
 
 app.post("/search", async function (req, res) {
+  await client.connect();
   const search = req.body.search;
+  const select = req.body.select;
+  if (select === "postgres"){
   let search_results = await pool.query(
-    "SELECT city, country, code, timezone FROM locations WHERE country LIKE '" + search + "'"
+    "SELECT city, country, code, timezone FROM locations WHERE country LIKE '%" + search + "%'"
   );
-  console.log(search_results);
   res.render("results.html", {
     results: search_results.rows.map((result) => JSON.stringify(result)),
   });
-});
-
-app.get("/secret", function (req, res) {
-  if (req.session.loggedin === true) {
-    res.send("You can see this because you're logged in!");
-  } else {
-    res.send("Please login to view");
+} else {
+  if (select === "mongo") {
+  let search_results = await client.db("locations").collection("location_data").find({"country": search}).toArray();
+  res.render("results.html", {
+    results: search_results.map((result) => JSON.stringify(result)),
+  });
+    
   }
+}
 });
 
 app.post("/logout", function (req, res) {
