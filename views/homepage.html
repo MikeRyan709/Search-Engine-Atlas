@@ -13,8 +13,14 @@
     <button type="submit" formaction="http://localhost:3000/login">Log In</button>
     <button type="submit" formaction="http://localhost:3000/search">Search</button>
     <button type="submit" formaction="http://localhost:3000/signup">Sign Up</button>
-    <button type="submit" formaction="http://localhost:3000/logout">Logout</button>
+    <button onclick="Logout()" type="submit" formaction="http://localhost:3000/logout">Logout</button>
 </form>
     </div>
 </body>
+<script>
+    function Logout() {
+        alert("You've been Logged out!")
+        req.session.destroy()
+    }
+</script>
 </html>

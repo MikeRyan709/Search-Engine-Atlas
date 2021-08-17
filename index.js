@@ -88,6 +88,7 @@ app.post("/login", async function (req, res) {
   } else {
     if (bcrypt.compare(password, results.rows[0].password)) {
       req.session.loggedin = true;
+      res.redirect("/search");
       console.log("logged in");
     } else {
       res.send("Invalid credentials try again!");
@@ -120,8 +121,8 @@ app.post("/search", async function (req, res) {
 app.post("/logout", function (req, res) {
   if (req.session.destroy()) {
     res.send("You have logged out!");
-  }
-});
+  }})
+
 
 app.listen(3000, function () {
   console.log("listening at http://localhost:3000");
