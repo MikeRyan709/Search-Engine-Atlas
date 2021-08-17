@@ -104,13 +104,13 @@ app.post("/search", async function (req, res) {
     "SELECT city, country, code, timezone FROM locations WHERE country LIKE '%" + search + "%'"
   );
   res.render("results.html", {
-    results: search_results.rows.map((result) => JSON.stringify(result, null, 2)),
+    results: search_results.rows //.rows.map((result) => JSON.stringify(result, null, 2)),
   });
 } else {
   if (select === "mongo") {
   let search_results = await client.db("locations").collection("location_data").find({"country": search}).toArray();
   res.render("results.html", {
-    results: search_results.map((result) => JSON.stringify(result, null, 2)),
+    results: search_results
   });
     
   }
