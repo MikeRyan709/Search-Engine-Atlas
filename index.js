@@ -97,10 +97,6 @@ app.post("/login", async function (req, res) {
 });
 
 app.post("/search", async function (req, res) {
-  if(req.session.loggedin ===true){
-  }else{
-    res.redirect("/")
-  }
   await client.connect();
   const search = req.body.search;
   const select = req.body.select;
