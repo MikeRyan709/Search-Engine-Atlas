@@ -6,8 +6,6 @@ const bcrypt = require("bcrypt");
 const nunjucks = require("nunjucks");
 const mongodb = require("mongodb");
 
-
-
 const pool = new pg.Pool({
   user: "postgres",
   host: "localhost",
@@ -100,7 +98,8 @@ app.post("/search", async function (req, res) {
     console.log("Access granted!");
   }else {
     res.redirect("/login")
-}
+    return;
+  }
   await client.connect();
   const search = req.body.search;
   const select = req.body.select;
