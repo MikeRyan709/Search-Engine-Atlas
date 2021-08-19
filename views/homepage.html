@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript" src="index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
@@ -13,14 +14,20 @@
     <button type="submit" formaction="http://localhost:3000/login">Log In</button>
     <button type="submit" formaction="http://localhost:3000/search">Search</button>
     <button type="submit" formaction="http://localhost:3000/signup">Sign Up</button>
-    <button onclick="Logout()" type="submit" formaction="http://localhost:3000/logout">Logout</button>
+    <button type="submit" onclick="Logout()" formaction="http://localhost:3000/">Logout</button>
 </form>
     </div>
 </body>
-<script>
+<script type="text/javascript">
     function Logout() {
-        alert("You've been Logged out!")
-        req.session.destroy()
-    }
+        fetch("/logout", {
+   method: "POST"
+}).then(()=>{
+  alert("Logged out!");
+})
+  /*if (session.loggedin === true){
+  req.session.destroy();*/
+  return console.log("Logged out!")
+}
 </script>
 </html>

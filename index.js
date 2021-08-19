@@ -6,6 +6,8 @@ const bcrypt = require("bcrypt");
 const nunjucks = require("nunjucks");
 const mongodb = require("mongodb");
 
+
+
 const pool = new pg.Pool({
   user: "postgres",
   host: "localhost",
@@ -42,9 +44,6 @@ app.get("/signup", function (req, res) {
   res.render("signup.html");
 });
 
-app.get("/logout", function (req, res) {
-  res.render("logout.html");
-});
 
 app.get("/search", function (req, res) {
   res.render("search.html");
@@ -97,6 +96,11 @@ app.post("/login", async function (req, res) {
 });
 
 app.post("/search", async function (req, res) {
+  if (req.session.loggedin === true){
+    console.log("Access granted!");
+  }else {
+    res.redirect("/login")
+}
   await client.connect();
   const search = req.body.search;
   const select = req.body.select;
@@ -113,15 +117,13 @@ app.post("/search", async function (req, res) {
   res.render("results.html", {
     results: search_results
   });
-    
-  }
-}
-});
+}};
+})
 
 app.post("/logout", function (req, res) {
   if (req.session.destroy()) {
-    res.send("You have logged out!");
-  }})
+    console.log("Logged out!")
+  }});
 
 
 app.listen(3000, function () {
